@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/project_chatgpt_backend"
+]
+resolver = "2"

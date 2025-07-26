@@ -1,0 +1,24 @@
+type ChatMessage = record {
+  question: text;
+  answer: text;
+};
+
+type ChatId = text;
+
+type ChatInfo = record {
+  name: text;
+  messages: vec ChatMessage;
+}
+
+service : {
+    try_increment_user_prompt: (principal) -> (bool);
+    get_user_name: (principal) -> (text) query;
+    set_user_name: (principal, text) -> ();
+    create_new_chat: (principal, ChatId, text) -> ();
+    add_chat_message: (principal, ChatId, text, text) -> ();
+    get_chat_history: (principal, ChatId) -> (ChatInfo) query;
+    delete_chat: (principal, ChatId) -> (bool);
+    rename_chat: (principal, ChatId, text) -> (bool);
+    list_chats: (principal) -> (vec record { id: ChatId; name: text }) query;
+    "chat": (text) -> (text);
+}
