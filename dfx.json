@@ -3,10 +3,7 @@
     "project_chatgpt_backend": {
       "candid": "src/project_chatgpt_backend/project_chatgpt_backend.did",
       "package": "project_chatgpt_backend",
-      "type": "rust",
-      "env": {
-        "OPENAI_API_KEY": "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"
-      }
+      "type": "rust"
     },
     "project_chatgpt_frontend": {
       "dependencies": [
